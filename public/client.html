@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+    <script type="module" src="javascripts/app.js"></script>
+    <title>LIFWEB Shortener</title>
+  </head>
+  <body>
+    <main class="hero is-info is-fullheight">
+      <section class="hero-body">
+        <div class="container">
+          <h1 class="title is-1">The <span class="is-family-monospace">LIFWEB</span> Shortener</h1>
+          <p class="subtitle" id="app-subtitle"></p>
+
+          <!-- <h2 class="title is-2">Add a new link</h2> -->
+
+          <form class="field" method="post" action="#" id="create-link">
+            <div class="field">
+              <label class="label" for="url">Type the URL to shorten</label>
+            </div>
+
+            <div class="field has-addons">
+              <div class="control has-icons-left">
+                <input class="input" name="uri" type="url" placeholder="https://perdu.com" />
+                <span class="icon is-small is-left">
+                  <i>🔗</i>
+                </span>
+              </div>
+
+              <div class="control">
+                <button class="button is-primary">Create</button>
+              </div>
+            </div>
+          </form>
+
+          <div class="block" id="generated-link"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <template id="success-template">
+      <div
+        class="notification is-success has-text-weight-bold is-family-monospace has-text-centered"
+      >
+        <a></a>
+      </div>
+      <div class="has-text-centered">
+        <button class="button is-primary is-medium" id="copy">
+          <span class="icon"><i>📋</i></span
+          ><span>Copy</span>
+        </button>
+      </div>
+    </template>
+    <template id="failure-template">
+      <div
+        class="notification is-warning has-text-weight-bold is-family-monospace has-text-centered"
+      ></div>
+    </template>
+  </body>
+</html>

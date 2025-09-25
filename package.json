@@ -1,0 +1,104 @@
+{
+  "name": "lifweb-url-shortener",
+  "version": "0.1.4",
+  "description": "URL shortener Web API server",
+  "main": "main.js",
+  "scripts": { 
+    "test": "lab --verbose --environment testing  **/*.test.js",
+    "start": "cross-env NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_ENV=development nodemon main.js",
+    "prod": "cross-env NODE_ENV=production node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://forge.univ-lyon1.fr/aurelien.tabard/lifweb-url-shortener-2025"
+  },
+  "type": "module",
+  "keywords": [
+    "javascript",
+    "education",
+    "licence",
+    "informatique",
+    "asynchrone",
+    "fetch",
+    "node.js"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "homepage": "http://lifweb.pages.univ-lyon1.fr/",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hapi": "^21.3.7",
+    "@hapi/inert": "^7.1.0",
+    "better-sqlite3": "^11.9.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "joi": "^17.12.2",
+    "laabr": "^6.1.3",
+    "nanoid": "^5.0.6",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "@hapi/code": "^9.0.3",
+    "@hapi/lab": "^25.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-security": "^2.1.1",
+    "eslint-plugin-unicorn": "^51.0.1",
+    "nodemon": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "ext": "js",
+    "ignore": [
+      "./tests/*",
+      "./public/*",
+      "./client/*"
+    ],
+    "signal": "SIGHUP"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "proseWrap": "preserve",
+    "printWidth": 100,
+    "bracketSpacing": true,
+    "quoteProps": "consistent",
+    "tabWidth": 2,
+    "semi": true
+  },
+  "eslintConfig": {
+    "env": {
+      "es2024": true,
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "unicorn"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "prettier",
+      "plugin:unicorn/recommended"
+    ],
+    "rules": {
+      "no-var": "error",
+      "no-restricted-syntax": [
+        "error",
+        "ForInStatement"
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_|request|h"
+        }
+      ]
+    }
+  }
+}
